@@ -39,4 +39,15 @@ print()
 for call in calorias{
     print(call)
 }
+print()
 
+//implicito e explicito
+func allCallories(calorias: Array<Double>)-> Double {
+    var total: Double = 0
+    for c in calorias{
+        total += c
+    }
+    return total
+    
+}
+allCallories(calorias: [10.8,200,87,100])
