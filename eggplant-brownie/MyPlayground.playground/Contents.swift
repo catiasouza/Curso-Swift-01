@@ -110,3 +110,7 @@ class Cao{
 }
 let caozinho = Cao(idade: 3, raca: "Samoieda")
 print("\(caozinho.raca ) tem \(caozinho.idade) anos")
+
+print("************")
+
+

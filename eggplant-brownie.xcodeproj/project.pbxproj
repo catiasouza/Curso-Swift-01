@@ -48,6 +48,7 @@
 		7545049F2333B9350022C9A2 /* eggplant_brownieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eggplant_brownieUITests.swift; sourceTree = "<group>"; };
 		754504A12333B9350022C9A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		754504AE2333F1F50022C9A2 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		754504AF233546B00022C9A2 /* MyPlaygroundClasses.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlaygroundClasses.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +106,7 @@
 				754504882333B9350022C9A2 /* LaunchScreen.storyboard */,
 				7545048B2333B9350022C9A2 /* Info.plist */,
 				754504AE2333F1F50022C9A2 /* MyPlayground.playground */,
+				754504AF233546B00022C9A2 /* MyPlaygroundClasses.playground */,
 			);
 			path = "eggplant-brownie";
 			sourceTree = "<group>";
