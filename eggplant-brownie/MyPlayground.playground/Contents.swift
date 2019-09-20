@@ -51,3 +51,35 @@ func allCallories(calorias: Array<Double>)-> Double {
     
 }
 allCallories(calorias: [10.8,200,87,100])
+
+//CLASSES
+class Meal{
+    var happiness = 5
+    var name = "eggplant brownie"
+}
+let brownie = Meal()
+
+print(brownie.name)
+//MUDANDO AS VARIAVEIS DA CLASSE(QUE NAO SAO CONSTANTES)
+brownie.name = "sundubu"
+print(brownie.name)
+
+//INICIANDO AS VARIAVEIS OPCIONAIS
+
+class Doce{
+    var frutas : Int?
+    var sobremesa : String?
+}
+var doceria = Doce()
+doceria.frutas = 6
+doceria.sobremesa = "brigadeiro"
+print(doceria.frutas)
+print(doceria.sobremesa)
+print(doceria.sobremesa!.uppercased()) //AFIRMANDO QUE A VARIAVEL IRA RECEBER VALOR
+
+var frutas : String?
+frutas = "Laranja"
+print(frutas)
+print(frutas!.uppercased())
+
+ //Optionals com interrogação e exclamação e além de um unwrapping com let
