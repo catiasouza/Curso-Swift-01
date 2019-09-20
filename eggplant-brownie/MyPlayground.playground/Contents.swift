@@ -83,3 +83,30 @@ print(frutas)
 print(frutas!.uppercased())
 
  //Optionals com interrogação e exclamação e além de um unwrapping com let
+print("************")
+class Meall{
+    var happiness:Int?
+    var name :String?
+}
+var brownies = Meall()
+brownies.name = "Eggplant"
+print(brownies.name)
+
+if let name = brownies.name{   //utilize if let se usar o ? para extrair valor
+    print(name.uppercased())
+}
+
+print("************")
+//Iniciador com parametro
+
+class Cao{
+    var idade: Int
+    var raca: String
+    
+    init(idade: Int, raca: String){
+        self.idade = idade
+        self.raca = raca
+    }
+}
+let caozinho = Cao(idade: 3, raca: "Samoieda")
+print("\(caozinho.raca ) tem \(caozinho.idade) anos")
