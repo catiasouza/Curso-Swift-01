@@ -16,6 +16,7 @@
 		754504BA23355DD80022C9A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754504B923355DD80022C9A2 /* ViewController.swift */; };
 		754504BC233560B40022C9A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 754504BB233560B40022C9A2 /* Main.storyboard */; };
 		754504BE2338F8E30022C9A2 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754504BD2338F8E30022C9A2 /* Meal.swift */; };
+		7559077F2339402D002C86B4 /* MealsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7559077E2339402D002C86B4 /* MealsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		754504B923355DD80022C9A2 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		754504BB233560B40022C9A2 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		754504BD2338F8E30022C9A2 /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
+		7559077E2339402D002C86B4 /* MealsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				754504BB233560B40022C9A2 /* Main.storyboard */,
+				7559077E2339402D002C86B4 /* MealsTableViewController.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7559077F2339402D002C86B4 /* MealsTableViewController.swift in Sources */,
 				754504BE2338F8E30022C9A2 /* Meal.swift in Sources */,
 				754504B82335595D0022C9A2 /* Item.swift in Sources */,
 				754504BA23355DD80022C9A2 /* ViewController.swift in Sources */,
