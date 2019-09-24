@@ -1,7 +1,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet var nameField: UITextField?
     @IBOutlet var happinessField: UITextField?
@@ -16,6 +16,17 @@ class ViewController: UIViewController, UITableViewDataSource {
         Item(name: "Merengue", calories: 9),
         Item(name: "Torta", calories: 7)]
     
+    //funcao para selecionar item na lista
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let cell = tableView.cellForRow(at: indexPath){ // valida se a celula existe
+            if(cell.accessoryType == UITableViewCell.AccessoryType.none){ // se a celula tiver desmarcada
+            cell.accessoryType = UITableViewCell.AccessoryType.checkmark //seleciona a celula
+            } else {
+                cell.accessoryType = UITableViewCell.AccessoryType.none //senao desmarca
+            }
+        }
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count  //devolve o total de itens do array
     }
@@ -27,6 +38,8 @@ class ViewController: UIViewController, UITableViewDataSource {
         cell.textLabel!.text = item.name
         return cell
     }
+    
+    
     @IBAction func add(){
         
         if(nameField == nil || happinessField == nil){
@@ -48,3 +61,4 @@ class ViewController: UIViewController, UITableViewDataSource {
         }
     }
 }
+
