@@ -140,7 +140,6 @@
 			isa = PBXGroup;
 			children = (
 				754504BB233560B40022C9A2 /* Main.storyboard */,
-				7559077E2339402D002C86B4 /* MealsTableViewController.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -157,6 +156,7 @@
 		754504B22335542D0022C9A2 /* viewcontrollers */ = {
 			isa = PBXGroup;
 			children = (
+				7559077E2339402D002C86B4 /* MealsTableViewController.swift */,
 				754504B923355DD80022C9A2 /* ViewController.swift */,
 			);
 			path = viewcontrollers;
