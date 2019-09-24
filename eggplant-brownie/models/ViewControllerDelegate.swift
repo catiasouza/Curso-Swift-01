@@ -2,8 +2,8 @@
 import Foundation
 
     
-    protocol ViewControllerDelegate {     //protocolo de identificacao dos dois lados
+protocol AddMealDelegate {     //protocolo de identificacao dos dois lados
         func add(_ meal: Meal)
-        }
+}
         
 

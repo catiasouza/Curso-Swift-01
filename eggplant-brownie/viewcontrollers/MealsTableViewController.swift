@@ -2,7 +2,7 @@
 
 import UIKit
 
-class MealsTableViewController : UITableViewController, ViewControllerDelegate {  //implementa o procolo ViewControllerDelegate com a funcao add
+class MealsTableViewController : UITableViewController, AddMealDelegate {  //implementa o protocolo ViewControllerDelegate com a funcao add
     
     var meals:Array<Meal> = [Meal(name: "Eggplante", happiness: 5),
                              Meal(name: "Zuchini Muffin", happiness: 4),
