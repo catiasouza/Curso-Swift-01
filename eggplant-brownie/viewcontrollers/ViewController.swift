@@ -5,7 +5,7 @@ class ViewController: UIViewController {
 
     @IBOutlet var nameField: UITextField?
     @IBOutlet var happinessField: UITextField?
-    var mealsTable: MealsTableViewController?
+    var delegate: ViewControllerDelegate?
     
     @IBAction func add(){
         
@@ -18,10 +18,10 @@ class ViewController: UIViewController {
         if let happiness = Int(happinessField!.text!){
             let meal = Meal(name: name, happiness: happiness)
             print("eaten \(meal.name) with happines \(meal.happiness)!")
-            if (mealsTable == nil){
+            if (delegate == nil){
                 return
             }
-            mealsTable?.add(meal)    //chamando o add refeicao do mealsTable
+            delegate?.add(meal)    //chamando o add refeicao do mealsTable
             if let navigation = navigationController{
                 navigation.popViewController(animated: true)
             }

@@ -2,7 +2,7 @@
 
 import UIKit
 
-class MealsTableViewController : UITableViewController {
+class MealsTableViewController : UITableViewController, ViewControllerDelegate {  //implementa o procolo ViewControllerDelegate com a funcao add
     
     var meals:Array<Meal> = [Meal(name: "Eggplante", happiness: 5),
                              Meal(name: "Zuchini Muffin", happiness: 4),
@@ -14,11 +14,14 @@ class MealsTableViewController : UITableViewController {
         meals.append(meal)          //refeicao adiciona refeicao
         tableView.reloadData()      //TableView recarregue os dados
     }
+    //segue e uma acao de navegar entre telas
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if(segue.identifier == "addMeal") {         //verifica se a tela e  a que vc quer
         let view  = segue.destination as! ViewController
-        view.mealsTable = self
+        view.delegate = self
     }
-    
+    }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return meals.count
     }
