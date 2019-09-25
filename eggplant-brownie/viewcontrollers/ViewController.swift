@@ -6,6 +6,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet var nameField: UITextField?
     @IBOutlet var happinessField: UITextField?
     var delegate: AddMealDelegate?  // o viewdelegate observa os eventos
+    var selected = Array<Item>() // variavel de um array vazio que armazena os itens q quero selecionar
     
     //simulando um array de item na lista
     var items = [
@@ -19,13 +20,19 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     //funcao para selecionar item na lista
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let cell = tableView.cellForRow(at: indexPath){ // valida se a celula existe
-            if(cell.accessoryType == UITableViewCell.AccessoryType.none){ // se a celula tiver desmarcada
-            cell.accessoryType = UITableViewCell.AccessoryType.checkmark //seleciona a celula
-            } else {
-                cell.accessoryType = UITableViewCell.AccessoryType.none //senao desmarca
+           
+                   //armazenando no array selected os itens selecionados
+                let item = items[indexPath.row]
+                   //verifica se a celula esta marcada, caso não esteja ele marca
+                if(cell.accessoryType == UITableViewCell.AccessoryType.none){
+                    cell.accessoryType = UITableViewCell.AccessoryType.checkmark
+                    selected.append(item)
+                }else{     //se estiver marcada, ele desmarca
+                    cell.accessoryType = UITableViewCell.AccessoryType.none
+                    selected.remove(at: (selected.count - 1))
+                }
             }
         }
-    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count  //devolve o total de itens do array
@@ -49,8 +56,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let name:String = nameField!.text!
         
         if let happiness = Int(happinessField!.text!){
-            let meal = Meal(name: name, happiness: happiness)
-            print("eaten \(meal.name) with happines \(meal.happiness)!")
+            let meal = Meal(name: name, happiness: happiness, items: selected)//coloca no inicializador
+             // lista refeicao recebe item selecionado
+            
+            print("AMO \(meal.name) E MINHA FELICIDADE \(meal.happiness) E \(meal.items)!")
+            
             if (delegate == nil){
                 return
             }
@@ -61,4 +71,5 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
 }
+
 
