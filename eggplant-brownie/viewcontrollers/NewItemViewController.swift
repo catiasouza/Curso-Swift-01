@@ -1,14 +1,12 @@
-//
-//  NewItemViewController.swift
-//  eggplant-brownie
-//
-//  Created by Catia Miranda de Souza on 25/09/19.
-//  Copyright © 2019 Catia Miranda de Souza. All rights reserved.
-//
 
 import UIKit
 
 class NewItemViewController: UIViewController {
+    
+    @IBAction func addNdewItem(){  //Quando clicar no botao add do .xib ele executa essa funcao
+        print("adding new item")
+        
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,14 +15,6 @@ class NewItemViewController: UIViewController {
     }
 
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
 
 }

@@ -17,6 +17,19 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         Item(name: "Merengue", calories: 9),
         Item(name: "Torta", calories: 7)]
     
+    //Carregar view e cria um botao adicionar
+    override func viewDidLoad() {
+        let newItemButton = UIBarButtonItem(title: "new item", style: UIBarButtonItem.Style.plain, target: self, action: #selector(showNewItem))//action invoca o metodo showNewItem
+        navigationItem.rightBarButtonItem = newItemButton //cria um botao na barra de navegacao
+    }
+    @objc func showNewItem(){
+        let newItem = NewItemViewController()
+        if let navigation = navigationController{
+            navigation.pushViewController(newItem, animated: true)
+        }
+
+    }
+    
     //funcao para selecionar item na lista
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let cell = tableView.cellForRow(at: indexPath){ // valida se a celula existe
