@@ -26,6 +26,6 @@ class Meal {
         for item in items{
             message += "\n \(item.name) - calories: \(item.calories)"
         }
-            return message
+        return message
     }
 }

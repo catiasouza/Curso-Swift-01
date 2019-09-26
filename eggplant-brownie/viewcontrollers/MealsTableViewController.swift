@@ -18,9 +18,9 @@ class MealsTableViewController : UITableViewController, AddMealDelegate {  //imp
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if(segue.identifier == "addMeal") {         //verifica se a tela e  a que vc quer
-        let view  = segue.destination as! ViewController
-        view.delegate = self
-    }
+            let view  = segue.destination as! ViewController
+            view.delegate = self
+        }
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return meals.count
@@ -38,26 +38,35 @@ class MealsTableViewController : UITableViewController, AddMealDelegate {  //imp
         cell.addGestureRecognizer(longPressRecognizer)
         
         //retorna a celula
-            return cell
-
-}
+        return cell
+        
+    }
+    //reconhece q o boato foi pressionado
     @objc func showDetails(recognizer: UILongPressGestureRecognizer){
         if(recognizer.state == UIGestureRecognizer.State.began){
             let cell = recognizer.view as! UITableViewCell //Qual foi a acao feita
             
             if let  indexPath = tableView.indexPath(for: cell){  //devolve o resultado baseado na celula
-            let row = indexPath.row
-            let meal = meals[row]
-
-            
-            let details  =  UIAlertController(title: meal.name, message: meal.details(),  preferredStyle: UIAlertController.Style.alert)
-            //criar uma acao de ok
-            let ok = UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler: nil)
-                details.addAction(ok)
-            //apresentar na tela a msg
+                let row = indexPath.row
+                let meal = meals[row]
+                
+                
+                let details  =  UIAlertController(title: meal.name, message: meal.details(),  preferredStyle: UIAlertController.Style.alert)
+                
+                //pop up de remover
+                let remove = UIAlertAction(title: "Remove ", style: UIAlertAction.Style.destructive, handler: removeSelected)     //invoca a funcao para remover pop up
+                details.addAction(remove)
+                
+                let Cancel = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil)
+                details.addAction(Cancel)
+                //apresentar na tela a msg
                 present(details, animated: true, completion: nil)
+            }
+            
         }
-       
     }
-}
+    //funcao para remover o pop up
+    func removeSelected(action: UIAlertAction){
+        print("removed the selected one")
+    }
 }
