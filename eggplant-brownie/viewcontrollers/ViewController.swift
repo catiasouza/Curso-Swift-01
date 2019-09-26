@@ -1,7 +1,8 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate ,
+        AddAnItemDelegate {
     
     @IBOutlet var nameField: UITextField?
     @IBOutlet var happinessField: UITextField?
@@ -17,13 +18,21 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         Item(name: "Merengue", calories: 9),
         Item(name: "Torta", calories: 7)]
     
+    @IBOutlet var tableView : UITableView?
+    
+    func add(_ item: Item)  { //implementa o metodo do AddAnItemViewController
+        items.append(item)    //adiciono meu item
+        if let table = tableView{
+        table.reloadData()//atualiza a tela
+        }
+    }
     //Carregar view e cria um botao adicionar
     override func viewDidLoad() {
         let newItemButton = UIBarButtonItem(title: "new item", style: UIBarButtonItem.Style.plain, target: self, action: #selector(showNewItem))//action invoca o metodo showNewItem
         navigationItem.rightBarButtonItem = newItemButton //cria um botao na barra de navegacao
     }
     @objc func showNewItem(){
-        let newItem = NewItemViewController()
+        let newItem = NewItemViewController(delegate: self) //Mostra o newItemViewController  diretamente
         if let navigation = navigationController{
             navigation.pushViewController(newItem, animated: true)
         }

@@ -20,6 +20,7 @@
 		75B57E1C233BF9B9002D670A /* NewItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75B57E1A233BF9B9002D670A /* NewItemViewController.xib */; };
 		75B57E1E233BFA00002D670A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B57E1D233BFA00002D670A /* ViewController.swift */; };
 		75B57E20233BFA3C002D670A /* NewItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B57E1F233BFA3C002D670A /* NewItemViewController.swift */; };
+		75B57E22233CF02D002D670A /* AddAnItemDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B57E21233CF02D002D670A /* AddAnItemDelegate.swift */; };
 		75F585BB233A82F600DF553A /* MealsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F585BA233A82F600DF553A /* MealsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +63,7 @@
 		75B57E1A233BF9B9002D670A /* NewItemViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewItemViewController.xib; sourceTree = "<group>"; };
 		75B57E1D233BFA00002D670A /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		75B57E1F233BFA3C002D670A /* NewItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewItemViewController.swift; sourceTree = "<group>"; };
+		75B57E21233CF02D002D670A /* AddAnItemDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnItemDelegate.swift; sourceTree = "<group>"; };
 		75F585BA233A82F600DF553A /* MealsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -159,6 +161,7 @@
 				75590782233A7E39002C86B4 /* ViewControllerDelegate.swift */,
 				754504B72335595D0022C9A2 /* Item.swift */,
 				754504BD2338F8E30022C9A2 /* Meal.swift */,
+				75B57E21233CF02D002D670A /* AddAnItemDelegate.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				754504BE2338F8E30022C9A2 /* Meal.swift in Sources */,
 				754504B82335595D0022C9A2 /* Item.swift in Sources */,
 				75F585BB233A82F600DF553A /* MealsTableViewController.swift in Sources */,
+				75B57E22233CF02D002D670A /* AddAnItemDelegate.swift in Sources */,
 				754504BA23355DD80022C9A2 /* ViewController.swift in Sources */,
 				754504802333B9340022C9A2 /* AppDelegate.swift in Sources */,
 				75590783233A7E39002C86B4 /* ViewControllerDelegate.swift in Sources */,
