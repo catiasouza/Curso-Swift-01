@@ -20,10 +20,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     @IBOutlet var tableView : UITableView?
     
-    func add(_ item: Item)  { //implementa o metodo do AddAnItemViewController
-        items.append(item)    //adiciono meu item
+    func add(_ item: Item)  {               //implementa o metodo do AddAnItemViewController
+        items.append(item)//adiciono meu item
         if let table = tableView{
-        table.reloadData()//atualiza a tela
+            table.reloadData()
+   
+    } else {
+            Alert(controller: self).show("Unable to update items table")
         }
     }
     //Carregar view e cria um botao adicionar
