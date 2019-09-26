@@ -45,11 +45,17 @@ class MealsTableViewController : UITableViewController, AddMealDelegate {  //imp
         if(recognizer.state == UIGestureRecognizer.State.began){
             let cell = recognizer.view as! UITableViewCell //Qual foi a acao feita
             
-            if let  indexPath = tableView.indexPath(for: cell){  //devolve o resultado baseado na celula 
+            if let  indexPath = tableView.indexPath(for: cell){  //devolve o resultado baseado na celula
             let row = indexPath.row
             let meal = meals[row]
-             print("Long press: \(meal.name)")
-            
+
+            //mostrar msg de alerta
+                let details  =  UIAlertController(title: meal.name, message: "Happines: \(meal.happiness)", preferredStyle: UIAlertController.Style.alert)
+            //criar uma acao de ok
+                let ok = UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler: nil)
+                details.addAction(ok)
+            //apresentar na tela a msg
+                present(details, animated: true, completion: nil)
         }
        
     }
