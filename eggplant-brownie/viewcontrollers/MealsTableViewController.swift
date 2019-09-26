@@ -28,9 +28,30 @@ class MealsTableViewController : UITableViewController, AddMealDelegate {  //imp
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let row = indexPath.row
         let meal = meals[row]
+        //Criando uma celula
+        
         let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: nil)
         cell.textLabel!.text = meal.name
+        
+        //Reconhece qd vc pressiona a celula ele reconhece
+        let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(showDetails))
+        cell.addGestureRecognizer(longPressRecognizer)
+        
+        //retorna a celula
         return cell
 
+}
+    @objc func showDetails(recognizer: UILongPressGestureRecognizer){
+        if(recognizer.state == UIGestureRecognizer.State.began){
+            let cell = recognizer.view as! UITableViewCell //Qual foi a acao feita
+            
+            if let  indexPath = tableView.indexPath(for: cell){  //devolve o resultado baseado na celula 
+            let row = indexPath.row
+            let meal = meals[row]
+             print("Long press: \(meal.name)")
+            
+        }
+       
+    }
 }
 }
