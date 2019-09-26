@@ -20,4 +20,12 @@ class Meal {
         }
         return total
     }
+    func details() -> String {
+        //mostrar msg de alerta
+        var message = "Happiness: \(happiness)"
+        for item in items{
+            message += "\n \(item.name) - calories: \(item.calories)"
+        }
+            return message
+    }
 }

@@ -38,7 +38,7 @@ class MealsTableViewController : UITableViewController, AddMealDelegate {  //imp
         cell.addGestureRecognizer(longPressRecognizer)
         
         //retorna a celula
-        return cell
+            return cell
 
 }
     @objc func showDetails(recognizer: UILongPressGestureRecognizer){
@@ -49,10 +49,10 @@ class MealsTableViewController : UITableViewController, AddMealDelegate {  //imp
             let row = indexPath.row
             let meal = meals[row]
 
-            //mostrar msg de alerta
-                let details  =  UIAlertController(title: meal.name, message: "Happines: \(meal.happiness)", preferredStyle: UIAlertController.Style.alert)
+            
+            let details  =  UIAlertController(title: meal.name, message: meal.details(),  preferredStyle: UIAlertController.Style.alert)
             //criar uma acao de ok
-                let ok = UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler: nil)
+            let ok = UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler: nil)
                 details.addAction(ok)
             //apresentar na tela a msg
                 present(details, animated: true, completion: nil)
