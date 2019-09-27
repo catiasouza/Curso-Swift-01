@@ -49,9 +49,15 @@ class MealsTableViewController : UITableViewController, AddMealDelegate {  //imp
             if let  indexPath = tableView.indexPath(for: cell){  //devolve o resultado baseado na celula
                 let row = indexPath.row
                 let meal = meals[row]
-                
+                mealSelected = meal
                 
                 let details  =  UIAlertController(title: meal.name, message: meal.details(),  preferredStyle: UIAlertController.Style.alert)
+                
+                func removeSelected(action: UIAlertAction){
+                    print("removed the selected one:  \(mealSelected?.name)")
+                    meals.remove(at: row)
+                    tableView.reloadData() //remove item da lista
+                }
                 
                 //pop up de remover
                 let remove = UIAlertAction(title: "Remove ", style: UIAlertAction.Style.destructive, handler: removeSelected)     //invoca a funcao para remover pop up
@@ -65,8 +71,7 @@ class MealsTableViewController : UITableViewController, AddMealDelegate {  //imp
             
         }
     }
+    var mealSelected: Meal? //variavel de meal selecionada
     //funcao para remover o pop up
-    func removeSelected(action: UIAlertAction){
-        print("removed the selected one")
-    }
+    
 }
