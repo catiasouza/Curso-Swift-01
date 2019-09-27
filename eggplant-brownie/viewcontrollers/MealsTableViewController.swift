@@ -41,37 +41,21 @@ class MealsTableViewController : UITableViewController, AddMealDelegate {  //imp
         return cell
         
     }
-    //reconhece q o boato foi pressionado
+    //reconhece q o botao foi pressionado
     @objc func showDetails(recognizer: UILongPressGestureRecognizer){
         if(recognizer.state == UIGestureRecognizer.State.began){
             let cell = recognizer.view as! UITableViewCell //Qual foi a acao feita
             
-            if let  indexPath = tableView.indexPath(for: cell){  //devolve o resultado baseado na celula
+            //pega a celula exata
+            if let  indexPath = tableView.indexPath(for: cell){
                 let row = indexPath.row
                 let meal = meals[row]
-                mealSelected = meal
-                
-                let details  =  UIAlertController(title: meal.name, message: meal.details(),  preferredStyle: UIAlertController.Style.alert)
-                
-                func removeSelected(action: UIAlertAction){
-                    print("removed the selected one:  \(mealSelected?.name)")
-                    meals.remove(at: row)
-                    tableView.reloadData() //remove item da lista
-                }
-                
-                //pop up de remover
-                let remove = UIAlertAction(title: "Remove ", style: UIAlertAction.Style.destructive, handler: removeSelected)     //invoca a funcao para remover pop up
-                details.addAction(remove)
-                
-                let Cancel = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil)
-                details.addAction(Cancel)
-                //apresentar na tela a msg
-                present(details, animated: true, completion: nil)
-            }
-            
+                RemoveMealController(controller: self).show(meal, handler: { action    //o handler invoca a funcao removeSelected
+                    in self.meals.remove(at: row)
+                    self.tableView.reloadData()
+                })     //invoca a funcao para remover pop up
         }
     }
-    var mealSelected: Meal? //variavel de meal selecionada
-    //funcao para remover o pop up
-    
+   
+}
 }
