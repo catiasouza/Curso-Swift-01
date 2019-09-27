@@ -20,8 +20,12 @@ AddAnItemDelegate {
     
     @IBOutlet var tableView : UITableView?
     
+    
+    
     func add(_ item: Item)  {               //implementa o metodo do AddAnItemViewController
-        items.append(item)//adiciono meu item
+        items.append(item)                  //adiciono meu item
+        Dao().saveItems(items: items)
+        
         if let table = tableView{
             table.reloadData()
             
@@ -29,11 +33,20 @@ AddAnItemDelegate {
             Alert(controller: self).show("Unable to update items table")
         }
     }
+    
     //Carregar view e cria um botao adicionar
     override func viewDidLoad() {
         let newItemButton = UIBarButtonItem(title: "new item", style: UIBarButtonItem.Style.plain, target: self, action: #selector(showNewItem))//action invoca o metodo showNewItem
         navigationItem.rightBarButtonItem = newItemButton //cria um botao na barra de navegacao
-    }
+        
+        items = Dao().loadItems()
+        
+               }
+    
+    
+    
+    
+    
     @objc func showNewItem(){
         let newItem = NewItemViewController(delegate: self) //Mostra o newItemViewController  diretamente
         if let navigation = navigationController{

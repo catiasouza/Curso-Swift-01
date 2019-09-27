@@ -4,25 +4,22 @@ import UIKit
 
 class MealsTableViewController : UITableViewController, AddMealDelegate {  //implementa o protocolo ViewControllerDelegate com a funcao add
     
-    var meals:Array<Meal> = [Meal(name: "Eggplante", happiness: 5),
-                             Meal(name: "Zuchini Muffin", happiness: 4),
-                             Meal(name: "Hamburguer", happiness: 10),
-                             Meal(name: "Bolo", happiness: 8)]
+    var meals = Array<Meal>()
     
     //0 _ vc evita chamar o nome do parametro
     func add(_ meal: Meal){           //funcao para adicionar elemento na lista
-        meals.append(meal)          //refeicao adiciona refeicao
-       
-        // criando diretorio
-        let userDirs =
-        NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory,
-        FileManager.SearchPathDomainMask.userDomainMask, true)
-        let dir = userDirs[0]
-        print("saving at \(String(describing: dir))/")
-        let archive = "\(dir) /eggplant-brownie-meals.dados" //criando arquivo
-        NSKeyedArchiver.archiveRootObject(meals, toFile: archive ) //salva arquivo
-        tableView.reloadData()      //TableView recarregue os dados
+        meals.append(meal)
+        Dao().saveMeals(meals: meals)
+        tableView.reloadData()
+        
     }
+        
+
+    override func viewDidLoad() {
+ 
+        self.meals = Dao().loadMeals()
+      
+        }
     //segue e uma acao de navegar entre telas
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         

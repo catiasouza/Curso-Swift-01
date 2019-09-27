@@ -16,6 +16,7 @@
 		754504BA23355DD80022C9A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754504B923355DD80022C9A2 /* ViewController.swift */; };
 		754504BC233560B40022C9A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 754504BB233560B40022C9A2 /* Main.storyboard */; };
 		754504BE2338F8E30022C9A2 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754504BD2338F8E30022C9A2 /* Meal.swift */; };
+		754ADABE233E91F600AB49A9 /* Dao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754ADABD233E91F600AB49A9 /* Dao.swift */; };
 		75590783233A7E39002C86B4 /* ViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75590782233A7E39002C86B4 /* ViewControllerDelegate.swift */; };
 		75B57E1C233BF9B9002D670A /* NewItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75B57E1A233BF9B9002D670A /* NewItemViewController.xib */; };
 		75B57E1E233BFA00002D670A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B57E1D233BFA00002D670A /* ViewController.swift */; };
@@ -61,6 +62,7 @@
 		754504B923355DD80022C9A2 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		754504BB233560B40022C9A2 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		754504BD2338F8E30022C9A2 /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
+		754ADABD233E91F600AB49A9 /* Dao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dao.swift; sourceTree = "<group>"; };
 		75590782233A7E39002C86B4 /* ViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerDelegate.swift; sourceTree = "<group>"; };
 		75B57E1A233BF9B9002D670A /* NewItemViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewItemViewController.xib; sourceTree = "<group>"; };
 		75B57E1D233BFA00002D670A /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				754504B72335595D0022C9A2 /* Item.swift */,
 				754504BD2338F8E30022C9A2 /* Meal.swift */,
 				75B57E21233CF02D002D670A /* AddAnItemDelegate.swift */,
+				754ADABD233E91F600AB49A9 /* Dao.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 				754504BA23355DD80022C9A2 /* ViewController.swift in Sources */,
 				754504802333B9340022C9A2 /* AppDelegate.swift in Sources */,
 				75590783233A7E39002C86B4 /* ViewControllerDelegate.swift in Sources */,
+				754ADABE233E91F600AB49A9 /* Dao.swift in Sources */,
 				75B57E20233BFA3C002D670A /* NewItemViewController.swift in Sources */,
 				75B57E24233D32AC002D670A /* Alert.swift in Sources */,
 				75B57E1E233BFA00002D670A /* ViewController.swift in Sources */,
