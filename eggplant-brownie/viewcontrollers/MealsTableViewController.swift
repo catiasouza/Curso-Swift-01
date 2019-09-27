@@ -12,6 +12,15 @@ class MealsTableViewController : UITableViewController, AddMealDelegate {  //imp
     //0 _ vc evita chamar o nome do parametro
     func add(_ meal: Meal){           //funcao para adicionar elemento na lista
         meals.append(meal)          //refeicao adiciona refeicao
+       
+        // criando diretorio
+        let userDirs =
+        NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory,
+        FileManager.SearchPathDomainMask.userDomainMask, true)
+        let dir = userDirs[0]
+        print("saving at \(String(describing: dir))/")
+        let archive = "\(dir) /eggplant-brownie-meals.dados" //criando arquivo
+        NSKeyedArchiver.archiveRootObject(meals, toFile: archive ) //salva arquivo
         tableView.reloadData()      //TableView recarregue os dados
     }
     //segue e uma acao de navegar entre telas
