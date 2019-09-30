@@ -9,7 +9,7 @@ class MealsTableViewController : UITableViewController, AddMealDelegate {  //imp
     //0 _ vc evita chamar o nome do parametro
     func add(_ meal: Meal){           //funcao para adicionar elemento na lista
         meals.append(meal)
-        Dao().saveMeals(meals: meals)
+        Dao().save( meals)
         tableView.reloadData()
         
     }
@@ -17,7 +17,7 @@ class MealsTableViewController : UITableViewController, AddMealDelegate {  //imp
 
     override func viewDidLoad() {
  
-        self.meals = Dao().loadMeals()
+        self.meals = Dao().load()
       
         }
     //segue e uma acao de navegar entre telas

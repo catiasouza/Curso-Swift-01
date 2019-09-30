@@ -24,7 +24,7 @@ AddAnItemDelegate {
     
     func add(_ item: Item)  {               //implementa o metodo do AddAnItemViewController
         items.append(item)                  //adiciono meu item
-        Dao().saveItems(items: items)
+        Dao().save(items)
         
         if let table = tableView{
             table.reloadData()
@@ -39,12 +39,9 @@ AddAnItemDelegate {
         let newItemButton = UIBarButtonItem(title: "new item", style: UIBarButtonItem.Style.plain, target: self, action: #selector(showNewItem))//action invoca o metodo showNewItem
         navigationItem.rightBarButtonItem = newItemButton //cria um botao na barra de navegacao
         
-        items = Dao().loadItems()
+        items = Dao().load()
         
-               }
-    
-    
-    
+    }
     
     
     @objc func showNewItem(){
@@ -98,7 +95,7 @@ AddAnItemDelegate {
         if let name = nameField?.text{
             if let happiness = convertToInt(happinessField?.text){
                 print(happiness)
-        
+                
                 
             }
         }
@@ -120,7 +117,7 @@ AddAnItemDelegate {
         }
         return nil
     }
-
+    
     @IBAction func add(){
         
         let meal : Meal? = getMealFromForm()
@@ -146,4 +143,4 @@ AddAnItemDelegate {
 
 
 
-    
+
